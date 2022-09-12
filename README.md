@@ -17,7 +17,7 @@ Following Ad networks Added
 - Meta Audience Network
 
 Download UnityPackages
-1) Simple Admob network integrated
+1) Simple Admob network integrated.
 Name: AdmobMediation v7.2.0.unitypackage (Available on main)
 
 1) Admob mediation with Unity and Meta Ad Networks.
