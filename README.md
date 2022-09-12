@@ -2,6 +2,7 @@
 
 
 v1.0
+
 Admob unity Plugin version v7.2.0
 
 Test scene available for testing in unity editor.
@@ -18,7 +19,9 @@ Following Ad networks Added
 
 Download UnityPackages
 1) Simple Admob network integrated.
+
 Name: AdmobMediation v7.2.0.unitypackage (Available on main)
 
 1) Admob mediation with Unity and Meta Ad Networks.
+
 Name: AdmobMediation v7.2.0 with (Unity, Meta).unitypackage (Available on main)
