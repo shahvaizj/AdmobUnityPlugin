@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using GoogleMobileAds.Api.Mediation.UnityAds;
 public class AdsManager : MonoBehaviour
 {
     public static AdsManager instance;
@@ -71,7 +71,6 @@ public class AdsManager : MonoBehaviour
 
     void Log(string _str)
     {
-        //Toolbox.GameManager.Log("Ads=" + _str);
 
         Debug.Log("-- -- -- Ads=" + _str);
 
@@ -93,8 +92,7 @@ public class AdsManager : MonoBehaviour
 #if UNITY_IPHONE
         deviceIds.Add("");
 #elif UNITY_ANDROID
-        deviceIds.Add("1c4bd141-d52c-4919-8fcc-32e5e38507fe");
-        deviceIds.Add("efbd583e-e389-4272-8490-61496e215c2d");
+        deviceIds.Add("");
 #endif
 
         // Configure TagForChildDirectedTreatment and test device IDs.
@@ -103,6 +101,12 @@ public class AdsManager : MonoBehaviour
             .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
             .SetTagForUnderAgeOfConsent(TagForUnderAgeOfConsent.True)
             .SetTestDeviceIds(deviceIds).build();
+
+        //EU consent and GDPR
+        UnityAds.SetConsentMetaData("gdpr.consent", true);
+
+        //CCPA consent
+        UnityAds.SetConsentMetaData("privacy.consent", true);
 
         MobileAds.SetRequestConfiguration(requestConfiguration);
 
@@ -231,11 +235,6 @@ public class AdsManager : MonoBehaviour
 
     #region HELPER METHODS
 
-    public bool IsShowIAdTime()
-    {
-        return true;
-    }
-
     private AdRequest CreateAdRequest()
     {
         return new AdRequest.Builder().Build();
@@ -267,7 +266,7 @@ public class AdsManager : MonoBehaviour
 
             AdmobRequestAndLoadInterstitialAd();
             AdmobRequestAndLoadRewardedAd();
-
+            RequestAndLoadAppOpenAd();
         });
     }
 
