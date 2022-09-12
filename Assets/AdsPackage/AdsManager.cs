@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using GoogleMobileAds.Api.Mediation.UnityAds;
 public class AdsManager : MonoBehaviour
 {
     public static AdsManager instance;
@@ -103,6 +103,10 @@ public class AdsManager : MonoBehaviour
             .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
             .SetTagForUnderAgeOfConsent(TagForUnderAgeOfConsent.True)
             .SetTestDeviceIds(deviceIds).build();
+
+        //Unity Ads Consent
+        UnityAds.SetConsentMetaData("gdpr.consent", true);
+        UnityAds.SetConsentMetaData("privacy.consent", true);
 
         MobileAds.SetRequestConfiguration(requestConfiguration);
 
