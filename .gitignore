@@ -15,6 +15,7 @@ ehthumbs.db
 /Library/*
 /Build/*
 /Temp/*
+/Logs/*
 # Visual Studio / MonoDevelop generated
 # =====================================
 [Ee]xported[Oo]bj/
