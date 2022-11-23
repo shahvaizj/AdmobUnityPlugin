@@ -170,9 +170,15 @@ public class AdsManager : MonoBehaviour
 
             case AdType.REWARDED:
 
-                if (!rewardedAdView.IsLoaded())
-                    AdmobRequestAndLoadRewardedAd();
+                if (rewardedAdView != null && rewardedAdView.IsLoaded())
+                {
+                    //Dont loaded a loaded Ad
+                }
+                else {
 
+                    AdmobRequestAndLoadRewardedAd();
+                }
+                
                 break;
         }
     }
