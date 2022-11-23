@@ -156,9 +156,16 @@ public class AdsManager : MonoBehaviour
                 if (NoAdsPurchased)
                     return;
 
-                if (!interstitialAdView.IsLoaded())
-                    AdmobRequestAndLoadInterstitialAd();
+                
+                if (interstitialAdView != null && interstitialAdView.IsLoaded())
+                {
+                    //Dont loaded a loaded Ad
+                }
+                else {
 
+                    AdmobRequestAndLoadInterstitialAd();
+                }
+                
                 break;
 
             case AdType.REWARDED:
