@@ -1,5 +1,20 @@
 # AdmobUnityPlugin
 
+v2.0
+
+Admob unity Plugin version v7.4.1
+
+Test scene available for testing in unity editor.
+Test IDs used.
+
+Must enter your game AppID in settings of Admob in Assets/GoogleMobileAds/Settings (otherwise app will crash)
+
+Settings from web console of Unity and Meta is required for their Ads to work.
+More info on: https://developers.google.com/admob/unity/mediate
+
+Download UnityPackages
+1) Simple Admob network integrated.
+Name: AdmobMediation v7.4.1.unitypackage (Available on main)
 
 v1.0
 
