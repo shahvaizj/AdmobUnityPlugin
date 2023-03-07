@@ -9,32 +9,42 @@ public class TestAdsListner : MonoBehaviour
 
     public void Admob_Destroy_Banner()
     {
-        AdsManager.instance.DestroyBannerAd();
+        AdsManager.instance.HideBannerAd();
     }
 
     public void Admob_LoadnShow_Banner()
     {
-        AdsManager.instance.AdmobRequestBannerAd();
+        AdsManager.instance.ShowLoadedBanner();
     }
 
     public void Admob_Load_IAD()
     {
-        AdsManager.instance.AdmobRequestAndLoadInterstitialAd();
+        AdsManager.instance.RequestAndLoadInterstitialAd();
     }
 
     public void Admob_Show_IAD()
     {
-        AdsManager.instance.Admob_ShowInterstitialAd();
+        AdsManager.instance.ShowInterstitialAd();
+    }
+
+    public void Admob_Load_VideoIAD()
+    {
+        AdsManager.instance.RequestAndLoadInterstitialVideoAd();
+    }
+
+    public void Admob_Show_VideoIAD()
+    {
+        AdsManager.instance.ShowInterstitialVideoAd();
     }
 
     public void Admob_Load_RAD()
     {
-        AdsManager.instance.AdmobRequestAndLoadRewardedAd();
+        AdsManager.instance.RequestAndLoadRewardedVideoAd();
     }
 
     public void Admob_Show_RAD()
     {
-        AdsManager.instance.Admob_ShowRewardedAd();
+        AdsManager.instance.ShowRewardedAdWithSpecs( AdsManager.RewardType.FREECOINS, 100);
     }
 
     public void Admob_Load_OAD()
